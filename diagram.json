@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Gustavo Da SIlva Felix",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -14.36, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -22.8,
+      "left": 99.8,
+      "attrs": { "color": "purple", "flip": "" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "led1:C", "black", [ "v0" ] ],
+    [ "led1:A", "esp:22", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
