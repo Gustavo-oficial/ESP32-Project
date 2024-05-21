@@ -1,17 +1,18 @@
-const int pinoLed = 22;
-const int piscada = 5;
+const int leds[] = {2, 4, 5};
+const int numLeds = sizeof(leds) / sizeof(leds[0]);
+const int delayValue = 500;
 
 void setup() {
-  pinMode(pinoLed, OUTPUT);
-
-  for(int i = 0; i < piscada; i++){
-    digitalWrite(pinoLed, HIGH);
-    delay(500);
-    digitalWrite(pinoLed, LOW);
-    delay(500);
+  for(int i = 0; i < numLeds; i++){
+    pinMode(leds[i], OUTPUT);
   }
 }
 
 void loop() {
-  
+  for(int i = 0; i < numLeds; i++){
+    digitalWrite(leds[i], HIGH);
+    delay(delayValue);
+    digitalWrite(leds[i], LOW);
+    delay(delayValue);
+  }
 }
